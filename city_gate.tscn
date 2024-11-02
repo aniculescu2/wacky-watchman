@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://w37vo12kn8m8"]
+
+[ext_resource type="Texture2D" uid="uid://c6iqfso33sp78" path="res://resources/art/field.jpg" id="1_fhhju"]
+[ext_resource type="Script" path="res://city_gate.gd" id="1_idavq"]
+[ext_resource type="Texture2D" uid="uid://bgnuc8xn0t0fr" path="res://resources/art/main_gate.png" id="2_wsp4b"]
+[ext_resource type="Texture2D" uid="uid://bpy81pjj224ur" path="res://resources/art/dirt_path.png" id="3_ogy6m"]
+[ext_resource type="Texture2D" uid="uid://bor6nbtc1fvt7" path="res://resources/art/guard.webp" id="4_tw0we"]
+[ext_resource type="Texture2D" uid="uid://dh5eskvnsa6br" path="res://resources/art/peasant.jpg" id="6_em3ew"]
+
+[node name="CityGate" type="CanvasLayer"]
+script = ExtResource("1_idavq")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1366.0
+offset_bottom = 768.0
+texture = ExtResource("1_fhhju")
+
+[node name="MainGate" type="Sprite2D" parent="."]
+position = Vector2(98, 425)
+scale = Vector2(10.3553, 10.7336)
+texture = ExtResource("2_wsp4b")
+
+[node name="DirtPath" type="Sprite2D" parent="."]
+position = Vector2(841.5, 547.5)
+scale = Vector2(2.42429, 1.158)
+texture = ExtResource("3_ogy6m")
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(265, 619)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_tw0we")
+
+[node name="NPC" type="Sprite2D" parent="."]
+position = Vector2(978, 602)
+scale = Vector2(0.25, 0.238)
+texture = ExtResource("6_em3ew")
