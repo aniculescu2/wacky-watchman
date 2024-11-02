@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://w37vo12kn8m8"]
+
+[ext_resource type="Texture2D" uid="uid://c6iqfso33sp78" path="res://resources/art/field.jpg" id="1_fhhju"]
+[ext_resource type="Script" path="res://level.gd" id="1_idavq"]
+[ext_resource type="PackedScene" uid="uid://dt50jh8hochs" path="res://npc.tscn" id="2_o5j6w"]
+[ext_resource type="Texture2D" uid="uid://bgnuc8xn0t0fr" path="res://resources/art/main_gate.png" id="2_wsp4b"]
+[ext_resource type="Texture2D" uid="uid://bpy81pjj224ur" path="res://resources/art/dirt_path.png" id="3_ogy6m"]
+[ext_resource type="Texture2D" uid="uid://bor6nbtc1fvt7" path="res://resources/art/guard.webp" id="4_tw0we"]
+[ext_resource type="Script" path="res://player.gd" id="6_3anm2"]
+[ext_resource type="Texture2D" uid="uid://0t0c6q7xa4aj" path="res://resources/art/scroll.png" id="7_g8ar6"]
+[ext_resource type="FontFile" uid="uid://drwp8571nqvha" path="res://resources/fonts/BLKCHCRY.TTF" id="8_aasli"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_idavq")
+npc_scene = ExtResource("2_o5j6w")
+metadata/_edit_group_ = true
+
+[node name="CityGate" type="Node2D" parent="."]
+
+[node name="Background" type="TextureRect" parent="CityGate"]
+offset_right = 1366.0
+offset_bottom = 768.0
+texture = ExtResource("1_fhhju")
+
+[node name="MainGate" type="Sprite2D" parent="CityGate"]
+position = Vector2(98, 425)
+scale = Vector2(10.3553, 10.7336)
+texture = ExtResource("2_wsp4b")
+
+[node name="DirtPath" type="Sprite2D" parent="CityGate"]
+position = Vector2(841.5, 547.5)
+scale = Vector2(2.42429, 1.158)
+texture = ExtResource("3_ogy6m")
+
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource("6_3anm2")
+
+[node name="Sprite" type="Sprite2D" parent="Player"]
+position = Vector2(265, 619)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_tw0we")
+
+[node name="Choices" type="TextureRect" parent="Player"]
+offset_left = 264.0
+offset_top = 88.0
+offset_right = 673.0
+offset_bottom = 336.0
+texture = ExtResource("7_g8ar6")
+expand_mode = 1
+
+[node name="YesButton" type="Button" parent="Player/Choices"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 48.0
+offset_right = 304.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("8_aasli")
+text = "1:Yes"
+
+[node name="NoButton" type="Button" parent="Player/Choices"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 96.0
+offset_right = 304.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("8_aasli")
+text = "2: No"
+
+[connection signal="button_up" from="Player/Choices/YesButton" to="." method="_on_yes_button_button_up"]
+[connection signal="button_up" from="Player/Choices/YesButton" to="Player" method="_on_yes_button_button_up"]
+[connection signal="button_up" from="Player/Choices/NoButton" to="." method="_on_no_button_button_up"]
+[connection signal="button_up" from="Player/Choices/NoButton" to="Player" method="_on_no_button_button_up"]

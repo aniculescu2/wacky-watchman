@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://dt50jh8hochs"]
+
+[ext_resource type="Texture2D" uid="uid://dh5eskvnsa6br" path="res://resources/art/peasant.jpg" id="1_2c1hg"]
+[ext_resource type="Script" path="res://npc.gd" id="2_bmdfn"]
+[ext_resource type="PackedScene" uid="uid://dwpjykq55avw3" path="res://dialogue_player.tscn" id="3_rs1vt"]
+[ext_resource type="PackedScene" uid="uid://d1w6nxrrrycii" path="res://dialogue.tscn" id="4_gntsp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ie2j"]
+size = Vector2(192, 296)
+
+[node name="NPC" type="CharacterBody2D"]
+position = Vector2(1500, 600)
+collision_layer = 0
+motion_mode = 1
+script = ExtResource("2_bmdfn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_7ie2j")
+
+[node name="Peasant" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.238)
+texture = ExtResource("1_2c1hg")
+
+[node name="DialoguePlayer" parent="." instance=ExtResource("3_rs1vt")]
+dialogue_file = "res://resources/dialogue/npc.json"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Dialogue" parent="." instance=ExtResource("4_gntsp")]
+offset_left = -204.0
+offset_top = -496.0
+offset_right = 236.0
+offset_bottom = -248.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

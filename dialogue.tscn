@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1w6nxrrrycii"]
+
+[ext_resource type="Texture2D" uid="uid://0t0c6q7xa4aj" path="res://resources/art/scroll.png" id="1_h5k6i"]
+[ext_resource type="Script" path="res://dialogue.gd" id="2_03rf4"]
+[ext_resource type="FontFile" uid="uid://drwp8571nqvha" path="res://resources/fonts/BLKCHCRY.TTF" id="2_nxvem"]
+
+[node name="Dialogue" type="TextureRect"]
+offset_right = 440.0
+offset_bottom = 248.0
+texture = ExtResource("1_h5k6i")
+expand_mode = 1
+script = ExtResource("2_03rf4")
+
+[node name="Text" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 40.0
+offset_right = 360.0
+offset_bottom = 200.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_nxvem")
+theme_override_font_sizes/normal_font_size = 30
+scroll_active = false
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 184.0
+offset_right = 383.0
+offset_bottom = 215.0
+text = "Continue"
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

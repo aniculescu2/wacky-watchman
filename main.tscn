@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://main.gd" id="1_v7d00"]
 [ext_resource type="PackedScene" uid="uid://kwebr2scs6ru" path="res://start_menu.tscn" id="2_qmmgm"]
-[ext_resource type="PackedScene" uid="uid://w37vo12kn8m8" path="res://city_gate.tscn" id="3_a66nf"]
+[ext_resource type="PackedScene" uid="uid://w37vo12kn8m8" path="res://level.tscn" id="3_a66nf"]
 
 [node name="main" type="Node"]
 script = ExtResource("1_v7d00")
 
-[node name="StartMenu" parent="." instance=ExtResource("2_qmmgm")]
+[node name="Level" parent="." instance=ExtResource("3_a66nf")]
 
-[node name="CityGate" parent="." instance=ExtResource("3_a66nf")]
+[node name="StartMenu" parent="." instance=ExtResource("2_qmmgm")]
 
 [connection signal="start_game" from="StartMenu" to="." method="new_game"]
