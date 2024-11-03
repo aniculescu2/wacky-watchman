@@ -18,12 +18,11 @@ script = ExtResource("2_bmdfn")
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_7ie2j")
 
-[node name="Peasant" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.238)
 texture = ExtResource("1_2c1hg")
 
 [node name="DialoguePlayer" parent="." instance=ExtResource("3_rs1vt")]
-dialogue_file = "res://resources/dialogue/npc.json"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

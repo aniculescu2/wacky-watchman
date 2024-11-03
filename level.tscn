@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://w37vo12kn8m8"]
+[gd_scene load_steps=11 format=3 uid="uid://w37vo12kn8m8"]
 
 [ext_resource type="Texture2D" uid="uid://c6iqfso33sp78" path="res://resources/art/field.jpg" id="1_fhhju"]
 [ext_resource type="Script" path="res://level.gd" id="1_idavq"]
@@ -7,10 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://bpy81pjj224ur" path="res://resources/art/dirt_path.png" id="3_ogy6m"]
 [ext_resource type="Texture2D" uid="uid://bor6nbtc1fvt7" path="res://resources/art/guard.webp" id="4_tw0we"]
 [ext_resource type="Script" path="res://player.gd" id="6_3anm2"]
+[ext_resource type="Material" uid="uid://dawybcu1g7s1b" path="res://resources/wind_sway.tres" id="7_c14y0"]
 [ext_resource type="Texture2D" uid="uid://0t0c6q7xa4aj" path="res://resources/art/scroll.png" id="7_g8ar6"]
 [ext_resource type="FontFile" uid="uid://drwp8571nqvha" path="res://resources/fonts/BLKCHCRY.TTF" id="8_aasli"]
 
 [node name="Level" type="Node2D"]
+position = Vector2(0, -8)
 script = ExtResource("1_idavq")
 npc_scene = ExtResource("2_o5j6w")
 metadata/_edit_group_ = true
@@ -36,6 +38,7 @@ texture = ExtResource("3_ogy6m")
 script = ExtResource("6_3anm2")
 
 [node name="Sprite" type="Sprite2D" parent="Player"]
+material = ExtResource("7_c14y0")
 position = Vector2(265, 619)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("4_tw0we")
