@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://dd5h13ldp0inj"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_shv1m"]
+[ext_resource type="Material" uid="uid://dawybcu1g7s1b" path="res://resources/wind_sway.tres" id="2_gy374"]
+[ext_resource type="Texture2D" uid="uid://bor6nbtc1fvt7" path="res://resources/art/guard.webp" id="3_i5uxb"]
+[ext_resource type="Texture2D" uid="uid://0t0c6q7xa4aj" path="res://resources/art/scroll.png" id="4_u7ewg"]
+[ext_resource type="FontFile" uid="uid://drwp8571nqvha" path="res://resources/fonts/BLKCHCRY.TTF" id="5_xsang"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_shv1m")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+material = ExtResource("2_gy374")
+position = Vector2(265, 619)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_i5uxb")
+
+[node name="Choices" type="TextureRect" parent="."]
+offset_left = 264.0
+offset_top = 88.0
+offset_right = 673.0
+offset_bottom = 336.0
+texture = ExtResource("4_u7ewg")
+expand_mode = 1
+
+[node name="YesButton" type="Button" parent="Choices"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 48.0
+offset_right = 304.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("5_xsang")
+text = "1:Yes"
+
+[node name="NoButton" type="Button" parent="Choices"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 96.0
+offset_right = 304.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("5_xsang")
+text = "2: No"
+
+[connection signal="button_up" from="Choices/YesButton" to="." method="_on_yes_button_button_up"]
+[connection signal="button_up" from="Choices/NoButton" to="." method="_on_no_button_button_up"]

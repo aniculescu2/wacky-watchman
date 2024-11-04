@@ -12,5 +12,4 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_start_button_pressed() -> void:
-	self.hide()
 	start_game.emit()

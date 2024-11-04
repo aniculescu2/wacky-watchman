@@ -1,14 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://bq8lthc8cfgow"]
+[gd_scene load_steps=5 format=3 uid="uid://bq8lthc8cfgow"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_v7d00"]
 [ext_resource type="PackedScene" uid="uid://kwebr2scs6ru" path="res://start_menu.tscn" id="2_qmmgm"]
-[ext_resource type="PackedScene" uid="uid://w37vo12kn8m8" path="res://level.tscn" id="3_a66nf"]
+[ext_resource type="PackedScene" uid="uid://dd5h13ldp0inj" path="res://player.tscn" id="3_5c0th"]
+[ext_resource type="PackedScene" uid="uid://dxi6ekwvwsji0" path="res://scene_transition.tscn" id="4_0jkse"]
 
 [node name="main" type="Node"]
 script = ExtResource("1_v7d00")
 
-[node name="Level" parent="." instance=ExtResource("3_a66nf")]
+[node name="SceneTransition" parent="." instance=ExtResource("4_0jkse")]
 
-[node name="StartMenu" parent="." instance=ExtResource("2_qmmgm")]
+[node name="Player" parent="." instance=ExtResource("3_5c0th")]
+visible = false
 
-[connection signal="start_game" from="StartMenu" to="." method="new_game"]
+[node name="SceneContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartMenu" parent="SceneContainer" instance=ExtResource("2_qmmgm")]
+
+[connection signal="start_game" from="SceneContainer/StartMenu" to="." method="new_game"]

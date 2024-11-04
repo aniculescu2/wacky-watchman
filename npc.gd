@@ -12,6 +12,10 @@ var _state
 var bribe = 0
 var refused = 0
 var refusal_max = 0
+
+func _ready():
+	pass
+
 func _physics_process(delta: float):
 	if _state == State.WALKING:
 		move_and_slide()
@@ -31,7 +35,7 @@ func start_move():
 	velocity.x = WALK_SPEED
 	_state = State.WALKING
 	$DialoguePlayer.dialogue_file = ("res://resources/dialogue/%s.json" % npc_type)
-	$Timer.start()
+	#$Timer.start()
 
 func start_exit(enter):
 	$DialoguePlayer.dialogue_finished.emit()
