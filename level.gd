@@ -14,7 +14,8 @@ func _process(delta: float) -> void:
 	pass
 
 func start_game():
-	#show()
+	$Player/Choices/YesButton.button_up.connect(_on_yes_button_button_up)
+	$Player/Choices/NoButton.button_up.connect(_on_no_button_button_up)
 #	Bring in first NPC
 	next_npc(false)
 
@@ -24,7 +25,6 @@ func next_npc(enter):
 		_npc.start_exit(enter)
 
 #	Make new NPC and move to position
-	print("sending npc")
 	_npc = preload("res://npc.tscn").instantiate()
 	_npc.set_rand_type()
 	_npc.get_node("Dialogue").npc_dialogue_finished.connect(_on_npc_dialogue_finished)
@@ -40,7 +40,7 @@ func _on_npc_dialogue_finished() -> void:
 func _on_yes_button_button_up() -> void:
 	if $Player/Choices/YesButton.text == "1: Accept Bribe":
 		$Player.money += _npc.bribe
-		$Player/Choices/YesButton.text = "Yes"
+		$Player/Choices/YesButton.text = "1: Yes"
 	$Player/Choices.hide()
 	next_npc(true)
 
@@ -52,6 +52,6 @@ func _on_no_button_button_up() -> void:
 		_npc.refused_entry()
 		$Player/Choices/YesButton.text = "1: Accept Bribe"
 	else:
-		$Player/Choices/YesButton.text = "Yes"
+		$Player/Choices/YesButton.text = "1: Yes"
 		$Player/Choices.hide()
 		next_npc(false)

@@ -40,6 +40,3 @@ offset_right = 304.0
 offset_bottom = 128.0
 theme_override_fonts/font = ExtResource("5_xsang")
 text = "2: No"
-
-[connection signal="button_up" from="Choices/YesButton" to="." method="_on_yes_button_button_up"]
-[connection signal="button_up" from="Choices/NoButton" to="." method="_on_no_button_button_up"]
