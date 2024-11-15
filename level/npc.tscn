@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://dt50jh8hochs"]
 
 [ext_resource type="Texture2D" uid="uid://dh5eskvnsa6br" path="res://resources/art/peasant.jpg" id="1_2c1hg"]
-[ext_resource type="Script" path="res://npc.gd" id="2_bmdfn"]
-[ext_resource type="PackedScene" uid="uid://dwpjykq55avw3" path="res://dialogue_player.tscn" id="3_rs1vt"]
-[ext_resource type="PackedScene" uid="uid://d1w6nxrrrycii" path="res://dialogue.tscn" id="4_gntsp"]
+[ext_resource type="Script" path="res://level/npc.gd" id="2_bmdfn"]
+[ext_resource type="PackedScene" uid="uid://dwpjykq55avw3" path="res://dialogue/dialogue_player.tscn" id="3_rs1vt"]
+[ext_resource type="PackedScene" uid="uid://d1w6nxrrrycii" path="res://dialogue/dialogue.tscn" id="4_gntsp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ie2j"]
 size = Vector2(192, 296)

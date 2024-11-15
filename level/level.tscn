@@ -1,19 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://w37vo12kn8m8"]
+[gd_scene load_steps=7 format=3 uid="uid://w37vo12kn8m8"]
 
 [ext_resource type="Texture2D" uid="uid://c6iqfso33sp78" path="res://resources/art/field.jpg" id="1_fhhju"]
-[ext_resource type="Script" path="res://level.gd" id="1_idavq"]
+[ext_resource type="Script" path="res://level/level.gd" id="1_idavq"]
 [ext_resource type="Texture2D" uid="uid://bgnuc8xn0t0fr" path="res://resources/art/main_gate.png" id="2_wsp4b"]
 [ext_resource type="Texture2D" uid="uid://bpy81pjj224ur" path="res://resources/art/dirt_path.png" id="3_ogy6m"]
-[ext_resource type="PackedScene" uid="uid://dd5h13ldp0inj" path="res://player.tscn" id="5_x1up1"]
+[ext_resource type="PackedScene" uid="uid://dd5h13ldp0inj" path="res://player/player.tscn" id="5_x1up1"]
+[ext_resource type="PackedScene" uid="uid://dpuifx4awan0e" path="res://level/day_results.tscn" id="6_dvlmw"]
 
 [node name="Level" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_idavq")
 metadata/_edit_group_ = true
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0, 0, 0, 1)
 
 [node name="CityGate" type="Node2D" parent="."]
 
@@ -33,3 +30,7 @@ scale = Vector2(2.42429, 1.158)
 texture = ExtResource("3_ogy6m")
 
 [node name="Player" parent="." instance=ExtResource("5_x1up1")]
+
+[node name="DayResults" parent="." instance=ExtResource("6_dvlmw")]
+
+[connection signal="visibility_changed" from="DayResults" to="." method="_on_day_results_visibility_changed"]

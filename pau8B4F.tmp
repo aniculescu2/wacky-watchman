@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv41uvk345jr2"]
+
+[ext_resource type="Theme" uid="uid://c6vpiadjvp1cl" path="res://pause_menu_theme.tres" id="1_dmjp3"]
+[ext_resource type="Script" path="res://pause_menu.gd" id="2_qf2gp"]
+
+[node name="Pause Menu" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -250.0
+offset_right = 200.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_dmjp3")
+script = ExtResource("2_qf2gp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.5
+offset_top = -69.0
+offset_right = 52.5
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_dmjp3")
+alignment = 1
+
+[node name="PauseLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center]Pause[/center]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="ResumeButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="button_up" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_button_up"]

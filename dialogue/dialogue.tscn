@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d1w6nxrrrycii"]
 
 [ext_resource type="Texture2D" uid="uid://0t0c6q7xa4aj" path="res://resources/art/scroll.png" id="1_h5k6i"]
-[ext_resource type="Script" path="res://dialogue.gd" id="2_03rf4"]
+[ext_resource type="Script" path="res://dialogue/dialogue.gd" id="2_03rf4"]
 [ext_resource type="FontFile" uid="uid://drwp8571nqvha" path="res://resources/fonts/BLKCHCRY.TTF" id="2_nxvem"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ix6f"]

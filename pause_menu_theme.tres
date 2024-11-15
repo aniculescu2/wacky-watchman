@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://c6vpiadjvp1cl"]
+
+[ext_resource type="FontFile" uid="uid://drwp8571nqvha" path="res://resources/fonts/BLKCHCRY.TTF" id="1_ohdml"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_228c4"]
+bg_color = Color(0.52439, 0.65242, 0.328495, 1)
+
+[resource]
+resource_local_to_scene = true
+resource_name = "pause_menu"
+default_font = ExtResource("1_ohdml")
+default_font_size = 30
+Panel/styles/panel = SubResource("StyleBoxFlat_228c4")

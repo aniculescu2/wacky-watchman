@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://main.gd" id="1_v7d00"]
 [ext_resource type="PackedScene" uid="uid://kwebr2scs6ru" path="res://start_menu.tscn" id="2_qmmgm"]
-[ext_resource type="PackedScene" uid="uid://dd5h13ldp0inj" path="res://player/player.tscn" id="3_5c0th"]
+[ext_resource type="PackedScene" uid="uid://dd5h13ldp0inj" path="res://player.tscn" id="3_5c0th"]
 [ext_resource type="PackedScene" uid="uid://dxi6ekwvwsji0" path="res://scene_transition.tscn" id="4_0jkse"]
 [ext_resource type="PackedScene" uid="uid://dv41uvk345jr2" path="res://pause_menu.tscn" id="5_xrqb4"]
 [ext_resource type="FontFile" uid="uid://drwp8571nqvha" path="res://resources/fonts/BLKCHCRY.TTF" id="6_8qd21"]
@@ -18,7 +18,6 @@ default_font_size = 30
 Panel/styles/panel = SubResource("StyleBoxFlat_228c4")
 
 [node name="main" type="Node"]
-process_mode = 3
 script = ExtResource("1_v7d00")
 
 [node name="SceneTransition" parent="." instance=ExtResource("4_0jkse")]
